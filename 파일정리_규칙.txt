@@ -1,0 +1,78 @@
+React Native 구조 개괄
+-src
+| - components
+| - constants
+| - context
+| - hooks
+| - navigation
+| - res
+| - screens
+| - services
+| - styles
+
+React Native 구체적인 구조
+- src
+| - components: 반복적으로 사용되는 구성요소 (eg, RoundButton, Box)를 정리해놓은 폴더
+| | - general: 앱 전체에서 반복적으로 사용하는 구성요소
+| | - Research: 리서치 페이지들에서 반복적을 사용하는 구성요소
+| | ...
+| - constants: enum 파일들을 담고 있는 폴더 (서버와 공통적으로 사용되는 이름이 있으면 웬만하면 통일하면 좋을 것 같아요)
+| | - notification.type.ts
+| | ...
+| - context: 상태 관리 폴더, useContext 사용 (eg, userInfo, color)
+| | - userInfo.context.ts
+| | - color.context.ts
+| | ...
+| - hooks: 편의를 위해 자체적으로 만든 hook 관리 폴더(eg. useServerTransport, useNavBarHeight)
+| | - useServerTransport.tsx
+| | - useNavBarHeight.tsx
+| - navigation - navigation type, navigation 구조 관리 폴더
+| | - HomeNavigation.tsx
+| | - AuthNavigation.tsx
+| | - MainNavigation.tsx
+| | ...
+| - res: 리소스 파일 관리 폴더
+| | - image: 이미지 파일 관리 폴더
+| | | - general: 앱 전체에서 반복적으로 사용하는 이미지
+| | | - Research: 리서치 페이지에서 사용하는 이미지
+| | | ...
+| | - strings: 하드코딩 텍스트 폴더
+| | | - Korean: 한국어 하드코딩 텍스트 폴더 (확장성을 위해 우선 폴더 하나 더 생성함)
+| - screens: 
+| | - Profile
+| | | - UserPage (단순한 페이지)
+| | | | - index.tsx
+| | | | - style.tsx
+| | | - PasswordChangePage (복잡한 페이지)
+| | | | - index.tsx
+| | | | - provider.tsx
+| | | | - container.tsx
+| | | | - style.tsx
+| | | ...
+| | - Settings
+| | ...
+| - services: 서버 통신 api를 관리하는 폴더 (서버 라우터와 동일하게 하면 좋을 것 같아요)
+| | - User: user 관련 서버 통신 api 폴더
+| | - Reserach: Research 관련 서버 통신 api 폴더
+| | ...
+| - styles: 반복적으로 사용되는 스타일 관리 폴더
+| | - Colors: 색깔 관리 폴더, 이 색깔들은 Components에 바로 사용되는 것이 아니라 아래 스타일들을 통해 뿌려질 것임 (저번에 형이 알려준 Color - Theme 구조)
+| | | - ios.ts: IOS 색깔 관리 폴더
+| | | - android.ts: Android 색깔 관리 폴더
+| | | ...
+# 스타일에서 핸드폰이 IOS인지 Android인지 구분하여 색깔을 다르게 적용함
+| | - generalStyles: 앱 전체에서 반복적으로 사용되는 스타일 관리 폴더
+| | - formStyles: 폼 관련 스타일 폴더
+| | ...
+
+
+Reference
+
+# 폴더 세팅
+https://github.com/SimCoderYoutube/
+https://www.youtube.com/watch?v=ccOtKD5ZL1E
+
+# RN styling
+https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow
+
+# 라이브러리 관리 (RN은 라이브러리 관리를 꾸준히 해줘야 해서 사용중인 라이브러리를 여기다가 정리하면 좋을 것 같아요)
