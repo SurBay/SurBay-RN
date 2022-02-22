@@ -1,12 +1,11 @@
-import React from 'react'
+import { HEIGHT, WIDTH } from '@constants/screenSize';
+import { views } from '@styles/views';
 import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      width: WIDTH,
+      height: HEIGHT,
     },
   });
 

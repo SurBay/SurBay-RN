@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { BackHandler, Modal, View } from 'react-native'
 
-import { HomeNavigatorProps } from '@navigation/HomeNavigation'
-import { SecondNavigatorProps } from '@navigation/SecondNavigation'
-import { ThirdNavigatorProps } from '@navigation/ThirdNavigation'
-import { FourthNavigatorProps } from '@navigation/FourthNavigation'
-import { MyNavigatorProps } from '@navigation/MyNavigation'
+import { HomeNavigatorProps } from '@navigation/MainTabBar/HomeNavigation'
+import { SecondNavigatorProps } from '@navigation/MainTabBar/SecondNavigation'
+import { ThirdNavigatorProps } from '@navigation/MainTabBar/ThirdNavigation'
+import { FourthNavigatorProps } from '@navigation/MainTabBar/FourthNavigation'
+import { MyNavigatorProps } from '@navigation/MainTabBar/MyNavigation'
 
-import HomeNavigation from '@navigation/HomeNavigation'
-import SecondNavigation from '@navigation/SecondNavigation'
-import ThirdNavigation from '@navigation/ThirdNavigation'
-import FourthNavigation from '@navigation/FourthNavigation'
-import MyNavigation from '@navigation/MyNavigation'
+import HomeNavigation from '@navigation/MainTabBar/HomeNavigation'
+import SecondNavigation from '@navigation/MainTabBar/SecondNavigation'
+import ThirdNavigation from '@navigation/MainTabBar/ThirdNavigation'
+import FourthNavigation from '@navigation/MainTabBar/FourthNavigation'
+import MyNavigation from '@navigation/MainTabBar/MyNavigation'
 
 export const MainNavigator = createBottomTabNavigator<MainNavigatorProps>()
+
+
 export type MainNavigatorProps = {
     homeNav: HomeNavigatorProps
     secondNav: SecondNavigatorProps
@@ -24,14 +26,11 @@ export type MainNavigatorProps = {
     myNav: MyNavigatorProps
 }
 
-export default function MainNavigation( { navigation }: any) {
-    // BackHandler.addEventListener('hardwareBackPress', () => {
-    //     console.log("안돼요");
-    //     return true
-    // })
+export default function MainNavigation( { navigation, route }: any) {
 
     return (
-        <MainNavigator.Navigator initialRouteName='homeNav'>
+        <MainNavigator.Navigator initialRouteName='homeNav' screenOptions={{
+        }}>
             <MainNavigator.Screen name='homeNav' component={HomeNavigation} options={{
                 headerTitle: "리서치",
                 headerTitleAlign: 'center',

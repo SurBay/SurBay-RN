@@ -1,5 +1,8 @@
 import { RoundImage } from '@components/simple/Roundimage'
-import { SecondNavigatorProps } from '@navigation/SecondNavigation'
+import { MainNavigatorProps } from '@navigation/MainNavigation'
+import { SecondNavigatorProps } from '@navigation/MainTabBar/SecondNavigation'
+import { RootNavigatorProps } from '@navigation/RootNavigation'
+import { SubNavigatorProps } from '@navigation/SubNavigation'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
@@ -10,11 +13,13 @@ import { styles } from './styles'
 
 export function ResearchItem () {
 
-    const navigation = useNavigation<StackNavigationProp<SecondNavigatorProps>>()
+    const navigation = useNavigation<StackNavigationProp<RootNavigatorProps>>()
     
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.main_view} onPress={() => navigation.navigate('researchDetail')} activeOpacity = {1}>
+            <TouchableOpacity style={styles.main_view} onPress={() => navigation.navigate('subNav', {
+                screen: 'researchDetail'
+            })} activeOpacity = {1}>
                 <View style={styles.left_view}>
                     <RoundImage />
                 </View>
