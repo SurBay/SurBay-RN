@@ -14,6 +14,7 @@ import SecondNavigation from '@navigation/MainTabBar/SecondNavigation'
 import ThirdNavigation from '@navigation/MainTabBar/ThirdNavigation'
 import FourthNavigation from '@navigation/MainTabBar/FourthNavigation'
 import MyNavigation from '@navigation/MainTabBar/MyNavigation'
+import { HeaderIcon } from '@components/general/HeaderIcon'
 
 export const MainNavigator = createBottomTabNavigator<MainNavigatorProps>()
 
@@ -39,7 +40,11 @@ export default function MainNavigation( { navigation, route }: any) {
                 }
             }} />
             <MainNavigator.Screen name='secondNav' component={SecondNavigation} options={{
-                
+                headerLeft: () => (
+                    <View>
+                        <HeaderIcon role="back" />
+                    </View>
+                )
             }} />
             <MainNavigator.Screen name='thirdNav' component={ThirdNavigation} options={{
 

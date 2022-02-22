@@ -1,4 +1,4 @@
-import { RoundImage } from '@components/simple/Roundimage'
+import { SimpleImage } from '@components/simple/SimpleImage'
 import { MainNavigatorProps } from '@navigation/MainNavigation'
 import { SecondNavigatorProps } from '@navigation/MainTabBar/SecondNavigation'
 import { RootNavigatorProps } from '@navigation/RootNavigation'
@@ -21,7 +21,7 @@ export function ResearchItem () {
                 screen: 'researchDetail'
             })} activeOpacity = {1}>
                 <View style={styles.left_view}>
-                    <RoundImage />
+                    <SimpleImage source="https://surbaystore.s3.ap-northeast-2.amazonaws.com/1901633189033637.PNG"/>
                 </View>
                 <View style={styles.middle_view}>
                     <Text>첫줄</Text>
