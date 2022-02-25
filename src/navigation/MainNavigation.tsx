@@ -39,12 +39,20 @@ export default function MainNavigation( { navigation, route }: any) {
                     shadowOpacity: 30,
                 }
             }} />
-            <MainNavigator.Screen name='secondNav' component={SecondNavigation} options={{
-                headerLeft: () => (
-                    <View>
-                        <HeaderIcon role="back" />
-                    </View>
+            <MainNavigator.Screen name='secondNav' component={SecondNavigation} options= {({ navigation }) => {
+                return (
+                    {
+                        headerTitle: "리서치",
+                        headerTitleAlign: 'center',
+                        headerLeft: () => (
+                            <View style={{flexDirection: "row"}}>
+                                <HeaderIcon role="back" onPress={() => {navigation.pop()}} />
+                            </View>
+                            
+                        )
+                    }
                 )
+                
             }} />
             <MainNavigator.Screen name='thirdNav' component={ThirdNavigation} options={{
 

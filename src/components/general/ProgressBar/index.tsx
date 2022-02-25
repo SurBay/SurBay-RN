@@ -7,8 +7,8 @@ type propsT = {
     progress: number,
     width: number,
     height: number,
-    background_color: string,
-    gauge_color: string,
+    background_color: undefined|string,
+    gauge_color: undefined|string,
 }
 
 export function ProgressBar(props: propsT) {

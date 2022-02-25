@@ -7,5 +7,5 @@ export const views = StyleSheet.create({
         height: HEIGHT,
         backgroundColor: '#fff',
         marginTop: StatusBar.currentHeight,
-    }
+    },
 })
