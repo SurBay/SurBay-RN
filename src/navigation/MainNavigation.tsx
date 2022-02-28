@@ -31,10 +31,10 @@ export default function MainNavigation( { navigation, route }: any) {
 
     return (
         <MainNavigator.Navigator initialRouteName='homeNav' screenOptions={{
+            headerTitleAlign: 'center',
         }}>
             <MainNavigator.Screen name='homeNav' component={HomeNavigation} options={{
                 headerTitle: "리서치",
-                headerTitleAlign: 'center',
                 headerStyle: {
                     shadowOpacity: 30,
                 }
@@ -43,7 +43,6 @@ export default function MainNavigation( { navigation, route }: any) {
                 return (
                     {
                         headerTitle: "리서치",
-                        headerTitleAlign: 'center',
                         headerLeft: () => (
                             <View style={{flexDirection: "row"}}>
                                 <HeaderIcon role="back" onPress={() => {navigation.pop()}} />
